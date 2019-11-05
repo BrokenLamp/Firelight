@@ -1,0 +1,14 @@
+{
+  "name": "core",
+  "version": "0.1.0",
+  "description": "firelight core game logic",
+  "main": "lib/index.js",
+  "author": "Broken Lamp <->",
+  "license": "MIT",
+  "dependencies": {
+    "neon-cli": "^0.3.3"
+  },
+  "scripts": {
+    "install": "neon build --release"
+  }
+}

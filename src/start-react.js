@@ -1,4 +1,5 @@
 const net = require('net')
+const core = require('core')
 const childProcess = require('child_process')
 
 const port = process.env.PORT ? process.env.PORT - 100 : 3000
