@@ -3,8 +3,8 @@ extern crate neon;
 
 use neon::prelude::*;
 
-fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
-    Ok(cx.string("hello node"))
+fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
+    Ok(cx.number(178.5))
 }
 
 register_module!(mut cx, {
