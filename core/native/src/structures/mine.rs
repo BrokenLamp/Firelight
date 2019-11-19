@@ -1,12 +1,14 @@
-struct Mine {
+use crate::item::{ Item, ItemBag };
+use crate::structure::Structure;
+
+pub struct Mine {
     item: Item,
     items_left: u32,
     capacity: u32,
-    speed: u8,
 }
 
 impl Mine {
-    fn new(item: Item, num_items: u32) -> Result<Self, ()> {
+    pub fn new(item: Item, num_items: u32) -> Self {
         Mine {
             item: item,
             items_left: num_items,
@@ -16,24 +18,21 @@ impl Mine {
 }
 
 impl Structure for Mine {
-    fn update(&mut self, plot: &mut Plot, state: &mut GameState) {
-        let change = delta.ceil() as u32 * plot.bots * speed;
-        if let Some(num_items) game_state.items.get_mut(self.item) {
-            *num_items += change;
-        } else {
-            game_state.items.insert(self.item, change);
-        }
+    fn update(&mut self, bots: u32, items: &mut ItemBag) {
+        let change: u32 = bots;
+        self.items_left = (self.items_left - change).max(0) as u32;
+        items.add(self.item, change);
     }
 
-    fn get_construction_speed(&mut self) -> f32 {
+    fn get_construction_speed(&self) -> f32 {
         0.
     }
 
     fn can_destroy(&self) -> bool {
-        items_left == 0
+        self.items_left == 0
     }
 
     fn get_name(&self) -> String {
-        format!("Mine:{}", self.item)
+        format!("Mine:{:?}", self.item)
     }
 }

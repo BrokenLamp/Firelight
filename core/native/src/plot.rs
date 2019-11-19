@@ -1,6 +1,6 @@
 use std::mem;
 use super::structure::Structure;
-use super::GameState;
+use super::item::ItemBag;
 
 pub struct Plot {
     bots: u32,
@@ -21,16 +21,20 @@ impl Plot {
             Err(())
         }
     }
-    fn update(&mut self, delta: f32, state: &mut GameState) {
+    fn update(&mut self, items: &mut ItemBag) {
         if let Some(structure) = &mut self.structure {
+            let structure = &mut *structure;
             if self.constructed_percent > 100.0 {
-                (*structure).update(&mut self.bots, delta, state);
+                structure.update(self.bots, items);
             } else {
-                self.constructed_percent += delta
-                    * (*structure).get_construction_speed()
+                self.constructed_percent += structure
+                    .get_construction_speed()
                     * self.bots as f32;
             }
         }
+    }
+    fn has_structure(&self) -> bool {
+        self.structure.is_some()
     }
     fn remove_structure(&mut self) -> Result<Box<Structure>, &str> {
         match self.structure {

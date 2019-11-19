@@ -5,16 +5,17 @@ mod item;
 mod plot;
 mod plot_grid;
 mod structure;
+mod structures;
 
 use std::collections::HashMap;
 use neon::prelude::*;
-use item::Item;
+use item::{ Item, ItemBag };
 use plot_grid::PlotGrid;
 
 
 struct GameState {
     grid: PlotGrid,
-    items: HashMap<Item, u32>,
+    items: ItemBag,
 }
 
 impl GameState {
