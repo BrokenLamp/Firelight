@@ -1,15 +1,19 @@
+use super::plot::Plot;
 
-const SIZE: isize = 15;
+const SIZE: usize = 15;
 
-struct PlotGrid {
-    plots: [mut Plot; SIZE * SIZE],
+pub struct PlotGrid {
+    plots: [Plot; SIZE * SIZE],
 }
 
 impl PlotGrid {
-    fn get_plot(&mut self, x: isize, y: isize) -> Result<&mut Plot, &str> {
+    fn get_plot(&mut self, x: usize, y: usize) -> Result<&mut Plot, &str> {
         if x < 0 || x > SIZE || y < 0 || y > SIZE {
-            return Err(format!("off_grid:{},{}", x, y));
+            return Err("out_of_bounds");
         }
-        self.plots[x + y * SIZE]
+        Ok(&mut self.plots[x + y * SIZE])
+    }
+    fn get_size() -> usize {
+        SIZE
     }
 }
