@@ -1,26 +1,15 @@
 #[macro_use]
 extern crate neon;
 
-mod item;
-mod plot;
-mod plot_grid;
-mod structure;
-mod structures;
+pub mod game_state;
+pub mod item;
+pub mod plot;
+pub mod plot_grid;
+pub mod structure;
+pub mod structures;
 
-use std::collections::HashMap;
 use neon::prelude::*;
-use item::{ Item, ItemBag };
-use plot_grid::PlotGrid;
-
-
-struct GameState {
-    grid: PlotGrid,
-    items: ItemBag,
-}
-
-impl GameState {
-    
-}
+use game_state::GameState;
 
 fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
     Ok(cx.number(178.5))

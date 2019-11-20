@@ -1,4 +1,4 @@
-use super::ItemBag;
+use super::item::ItemBag;
 use super::plot::Plot;
 
 pub trait Structure {

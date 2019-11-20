@@ -7,13 +7,22 @@ pub struct PlotGrid {
 }
 
 impl PlotGrid {
-    fn get_plot(&mut self, x: usize, y: usize) -> Result<&mut Plot, &str> {
-        if x < 0 || x > SIZE || y < 0 || y > SIZE {
+    pub fn generate() -> Self {
+
+    }
+    pub fn get_plot(&mut self, x: usize, y: usize) -> Result<&mut Plot, &str> {
+        if x > SIZE || y > SIZE {
             return Err("out_of_bounds");
         }
         Ok(&mut self.plots[x + y * SIZE])
     }
-    fn get_size() -> usize {
+    pub fn get_size() -> usize {
         SIZE
+    }
+    pub fn get_home(&mut self) -> &mut Plot {
+        &mut self.plots[self.plots.len() / 2]
+    }
+    pub fn iter(&mut self) -> Iter<Plot> {
+        self.plots.into_iter()
     }
 }

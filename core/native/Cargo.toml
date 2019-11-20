@@ -1,7 +1,7 @@
 [package]
 name = "core"
 version = "0.1.0"
-authors = ["Broken Lamp <->"]
+authors = ["Broken Lamp"]
 license = "MIT"
 build = "build.rs"
 exclude = ["artifacts.json", "index.node"]
