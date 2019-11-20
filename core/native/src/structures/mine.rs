@@ -32,7 +32,7 @@ impl Structure for Mine {
         self.items_left == 0
     }
 
-    fn get_name(&self) -> String {
+    fn get_info(&self) -> String {
         format!("Mine:{:?}", self.item)
     }
 }

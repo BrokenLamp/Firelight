@@ -53,6 +53,10 @@ impl Plot {
         }
     }
 
+    pub fn get_structure(&mut self) -> Option<&mut Structure> {
+        self.structure.map(|structure| { &mut *structure })
+    }
+
     pub fn set_structure(
         &mut self,
         structure: Box<dyn Structure>,

@@ -9,5 +9,5 @@ pub trait Structure {
     fn can_destroy(&self) -> bool {
         false
     }
-    fn get_name(&self) -> String;
+    fn get_info(&self) -> String;
 }
