@@ -33,6 +33,6 @@ impl Structure for Mine {
     }
 
     fn get_info(&self) -> String {
-        format!("Mine:{:?}", self.item)
+        format!("Mine:{:?}:{}/{}", self.item, self.items_left, self.capacity)
     }
 }

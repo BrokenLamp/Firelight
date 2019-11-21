@@ -1,14 +1,17 @@
+use std::slice::IterMut;
 use super::plot::Plot;
 
 const SIZE: usize = 15;
 
 pub struct PlotGrid {
-    plots: [Plot; SIZE * SIZE],
+    plots: Vec<Plot>,
 }
 
 impl PlotGrid {
     pub fn generate() -> Self {
-
+        PlotGrid {
+            plots: Vec::with_capacity(SIZE * SIZE),
+        }
     }
     pub fn get_plot(&mut self, x: usize, y: usize) -> Result<&mut Plot, &str> {
         if x > SIZE || y > SIZE {
@@ -20,9 +23,9 @@ impl PlotGrid {
         SIZE
     }
     pub fn get_home(&mut self) -> &mut Plot {
-        &mut self.plots[self.plots.len() / 2]
+        &mut self.plots[SIZE * SIZE / 2]
     }
-    pub fn iter(&mut self) -> Iter<Plot> {
-        self.plots.into_iter()
+    pub fn iter_mut(&mut self) -> IterMut<Plot> {
+        self.plots.iter_mut()
     }
 }

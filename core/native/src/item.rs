@@ -21,9 +21,10 @@ impl ItemBag {
         ItemBag { items: HashMap::with_capacity(64), }
     }
 
-    pub fn craft(&mut self, recipe: &[(Item, u32)], item: Item, quantity: u32) -> u32 {
+    /// Returns number crafted
+    pub fn craft(&mut self, _recipe: &[(Item, u32)], _item: Item, quantity: u32) -> u32 {
         // TODO: (required) DO THIS
-        0
+        quantity
     }
 
     pub fn add(&mut self, item: Item, quantity: u32) {
@@ -31,9 +32,9 @@ impl ItemBag {
     }
 
     /// Returns quantity that was actually removed
-    pub fn remove(&mut self, item: Item, quantity: u32) -> u32 {
+    pub fn remove(&mut self, _item: Item, quantity: u32) -> u32 {
         // TODO: (required) DO THIS
-        0
+        quantity
     }
 
     pub fn get(&self, item: Item) -> u32 {
@@ -43,7 +44,7 @@ impl ItemBag {
         }
     }
 
-    pub fn set(&mut self, item: Item, quantity: u32) {
+    pub fn set(&mut self, _item: Item, _quantity: u32) {
         // TODO: (required) DO THIS
     }
 }

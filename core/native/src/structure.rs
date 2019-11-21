@@ -1,5 +1,4 @@
 use super::item::ItemBag;
-use super::plot::Plot;
 
 pub trait Structure {
     fn update(&mut self, bots: u32, items: &mut ItemBag);

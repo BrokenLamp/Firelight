@@ -1,3 +1,4 @@
+#[allow(unused_imports)]
 #[macro_use]
 extern crate neon;
 
@@ -9,7 +10,6 @@ pub mod structure;
 pub mod structures;
 
 use neon::prelude::*;
-use game_state::GameState;
 
 fn hello(mut cx: FunctionContext) -> JsResult<JsNumber> {
     Ok(cx.number(178.5))

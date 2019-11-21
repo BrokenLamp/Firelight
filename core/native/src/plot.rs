@@ -53,8 +53,8 @@ impl Plot {
         }
     }
 
-    pub fn get_structure(&mut self) -> Option<&mut Structure> {
-        self.structure.map(|structure| { &mut *structure })
+    pub fn get_structure(&mut self) -> Option<&mut dyn Structure> {
+        self.structure.as_mut().map(|x| &mut **x as &mut dyn Structure)
     }
 
     pub fn set_structure(

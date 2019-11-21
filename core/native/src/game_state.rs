@@ -1,5 +1,4 @@
-use super::item::{ Item, ItemBag };
-use super::plot::Plot;
+use super::item::ItemBag;
 use super::plot_grid::PlotGrid;
 
 pub struct GameState {
@@ -15,8 +14,9 @@ impl GameState {
         }
     }
     pub fn update(&mut self) {
-        self.grid.iter().for_each(|&mut plot| {
+        let plots = self.grid.iter_mut();
+        for plot in plots {
             plot.update(&mut self.items);
-        });
+        }
     }
 }
