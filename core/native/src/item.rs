@@ -18,7 +18,9 @@ pub struct ItemBag {
 
 impl ItemBag {
     pub fn new() -> Self {
-        ItemBag { items: HashMap::with_capacity(64), }
+        ItemBag {
+            items: HashMap::with_capacity(64),
+        }
     }
 
     /// Returns number crafted

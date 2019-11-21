@@ -1,5 +1,5 @@
-use std::slice::IterMut;
 use super::plot::Plot;
+use std::slice::IterMut;
 
 const SIZE: usize = 15;
 

@@ -1,4 +1,4 @@
-use crate::item::{ Item, ItemBag };
+use crate::item::{Item, ItemBag};
 use crate::structure::Structure;
 
 pub struct Mine {
