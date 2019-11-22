@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Odibee Sans', cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
   color: #ccce;
+}
+
+* {
+  font-family: 'Odibee Sans', cursive;
+  box-sizing: border-box;
 }
 
 code {
@@ -18,7 +25,7 @@ code {
   outline: none;
 }
 
-input, .input {
+.btn {
   background: #ccc2;
   border: 1px solid #ccc4;
   color: #ccce;

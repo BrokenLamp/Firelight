@@ -1,0 +1,22 @@
+.TitleScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Title {
+    font-size: 12vh;
+    font-weight: bold;
+}
+
+.Buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.Buttons > * {
+    margin: 2vh;
+}
