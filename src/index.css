@@ -1,39 +1,41 @@
-@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap");
 
 body {
-  margin: 0;
-  font-family: 'Odibee Sans', cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #282c34;
-  color: #ccce;
+    margin: 0;
+    font-family: "Odibee Sans", cursive, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #282c34;
+    color: #ccce;
+    font-size: 18px;
 }
 
 * {
-  font-family: 'Odibee Sans', cursive;
-  box-sizing: border-box;
+    font-family: "Odibee Sans", cursive;
+    box-sizing: border-box;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
 *:focus {
-  outline: none;
+    outline: none;
 }
 
 .btn {
-  background: #ccc2;
-  border: 1px solid #ccc4;
-  color: #ccce;
-  padding: 5px 20px;
-  width: 150px;
+    font-size: 18px;
+    background: #ccc2;
+    border: 1px solid #ccc4;
+    color: #ccce;
+    padding: 5px 20px;
+    width: 150px;
 }
 
 .btn:hover {
-  background: #ccc3;
-  cursor: pointer;
+    background: #ccc3;
+    cursor: pointer;
 }

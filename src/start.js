@@ -11,9 +11,10 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
+        icon: __dirname + "/assets/icon.png",
         webPreferences: {
-            nodeIntegration: true
-        }
+            nodeIntegration: true,
+        },
     });
 
     mainWindow.loadURL(
@@ -21,8 +22,8 @@ function createWindow() {
             url.format({
                 pathname: path.join(__dirname, "/../public/index.html"),
                 protocol: "file:",
-                slashes: true
-            })
+                slashes: true,
+            }),
     );
 
     mainWindow.on("closed", () => {
