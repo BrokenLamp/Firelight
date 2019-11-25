@@ -12,10 +12,13 @@ function createWindow() {
         width: 800,
         height: 600,
         icon: __dirname + "/assets/icon.png",
+        autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
         },
     });
+
+    mainWindow.removeMenu();
 
     mainWindow.loadURL(
         process.env.ELECTRON_START_URL ||

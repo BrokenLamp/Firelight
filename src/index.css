@@ -10,6 +10,8 @@ body {
     background-color: #282c34;
     color: #ccce;
     font-size: 18px;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 * {
@@ -27,7 +29,7 @@ code {
 }
 
 .btn {
-    font-size: 18px;
+    font-size: 24px;
     background: #ccc2;
     border: 1px solid #ccc4;
     color: #ccce;
@@ -38,4 +40,9 @@ code {
 .btn:hover {
     background: #ccc3;
     cursor: pointer;
+}
+
+.full-screen {
+    width: 100vw;
+    height: 100vh;
 }

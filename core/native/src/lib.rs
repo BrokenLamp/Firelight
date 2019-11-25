@@ -11,16 +11,17 @@ pub mod structure;
 pub mod structures;
 
 use neon::prelude::*;
-use std::{io::BufReader, thread, time::Duration};
+use std::{io::BufReader, thread};
 
 fn set_soundscape(mut cx: FunctionContext) -> JsResult<JsNumber> {
-    thread::spawn(move || {
-        let device = rodio::default_output_device().unwrap();
-        let file = std::fs::File::open("core/native/src/music/a-moment-of-sorrow.mp3").unwrap();
-        let sound = rodio::play_once(&device, BufReader::new(file)).unwrap();
+    thread::spawn(move || -> Option<()> {
+        let device = rodio::default_output_device()?;
+        let file = std::fs::File::open("music/a-moment-of-sorrow.p.mp3").ok()?;
+        let sound = rodio::play_once(&device, BufReader::new(file)).ok()?;
         sound.set_volume(0.8);
         sound.sleep_until_end();
         println!("Playing sound");
+        Some(())
     });
     Ok(cx.number(0.))
 }
