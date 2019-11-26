@@ -1,16 +1,17 @@
 {
   "name": "firelight",
   "version": "0.1.0",
+  "author": "Broken Lamp LLC",
+  "description": "Firelight Game",
   "private": true,
   "homepage": "./",
-  "main": "src/start.js",
+  "main": "public/electron.js",
   "dependencies": {
     "@types/jest": "24.0.21",
     "@types/node": "12.12.5",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
     "core": "file:core",
-    "electron": "^7.1.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
@@ -19,15 +20,15 @@
   "scripts": {
     "start": "nf start -p 3000",
     "build:core": "electron-build-env neon build core --release",
-    "build:react": "react-scripts build",
+    "build": "react-scripts build",
     "test:react": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron": "electron .",
     "electron-start": "node src/start-react",
     "react-start": "env BROWSER=none react-scripts start",
-    "pack": "build --dir",
-    "dist": "npm run build && build",
-    "postinstall": "npm run build:core && install-app-deps"
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && npm run build:core && electron-builder",
+    "postinstall": "npm run build:core && install-app-deps && electron-builder install-app-deps"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +47,7 @@
   },
   "devDependencies": {
     "babel-plugin-root-import": "^6.4.1",
+    "electron": "^7.1.0",
     "electron-build-env": "^0.2.0",
     "electron-builder": "^22.1.0",
     "foreman": "^3.0.1",
@@ -53,12 +55,14 @@
     "nodemon": "^1.19.4"
   },
   "build": {
-    "appId": "com.electron.electron-with-create-react-app",
-    "win": {
-      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
-    },
-    "directories": {
-      "buildResources": "public"
+    "appId": "org.brokenlamp.firelight",
+    "files": [
+      "*.js",
+      "build",
+      "node_modules"
+    ],
+    "mac": {
+      "category": "game"
     }
   }
 }

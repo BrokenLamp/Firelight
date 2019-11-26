@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import match from "./patternMatch";
 import ScreenProps from "./components/screens/ScreenProps";
 import GameScreen from "./components/screens/GameScreen";
 import OptionsScreen from "./components/screens/OptionsScreen";
 import SaveSelectionScreen from "./components/screens/SaveSelectionScreen";
 import TitleScreen from "./components/screens/TitleScreen";
 import "./App.css";
-
-const core: any = window.require("core");
 
 export default () => {
     const [screen, setScreen] = useState(process.env.FL_SCREEN || "title");
@@ -23,7 +20,7 @@ export default () => {
 
     return (
         <div className="App">
-            <Screen setScreen={setScreen} />
+            <Screen setScreen={console.log} />
         </div>
     );
 };

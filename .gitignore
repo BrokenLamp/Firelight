@@ -10,6 +10,7 @@
 
 # production
 /build
+/dist
 
 # private assets
 *.p.mp3

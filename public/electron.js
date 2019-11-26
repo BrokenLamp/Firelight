@@ -7,6 +7,8 @@ const url = require("url");
 
 let mainWindow;
 
+console.log("THIS IS FIRELIGHT");
+
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
@@ -23,7 +25,7 @@ function createWindow() {
     mainWindow.loadURL(
         process.env.ELECTRON_START_URL ||
             url.format({
-                pathname: path.join(__dirname, "/../public/index.html"),
+                pathname: path.join(__dirname, "/../build/index.html"),
                 protocol: "file:",
                 slashes: true,
             }),
