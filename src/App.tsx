@@ -20,7 +20,7 @@ export default () => {
 
     return (
         <div className="App">
-            <Screen setScreen={console.log} />
+            <Screen setScreen={setScreen} />
         </div>
     );
 };
