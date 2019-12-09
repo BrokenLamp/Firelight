@@ -1,3 +1,53 @@
 .GameScreen {
+    padding: 20px;
     display: grid;
+    width: 100vw;
+    min-height: 100vh;
+    grid-gap: 20px;
+    grid-template: 
+        "log head head" 100px
+        "log main .   " minmax(300px, 1fr)
+        "map .    .   " 100px
+        / 150px auto;
+}
+
+.Head {
+    grid-area: head;
+    background-color: #fff1;
+}
+
+.Log {
+    grid-area: log;
+    background-color: #fff1;
+}
+
+.Main {
+    grid-area: main;
+    background-color: #fff1;
+}
+
+.Map {
+    grid-area: map;
+    background-color: #fff1;
+}
+
+@media screen and (max-width: 550px) {
+    .GameScreen {
+        grid-template:
+            "head head" 100px
+            "main main" minmax(300px, 1fr)
+            "log  map " 200px
+            / auto;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .GameScreen {
+        grid-template:
+            "head" 80px
+            "main" minmax(300px, 1fr)
+            "log " 200px
+            "map " 100px
+            / auto;
+    }
 }
